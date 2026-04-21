@@ -8,7 +8,7 @@ This project transitions the brand from a traditional footprint into a high-fide
 **Live Link:** [https://bi-polar-lkaa.onrender.com](https://bi-polar-lkaa.onrender.com)
 
 > [!IMPORTANT]  
-> **Deployment Platform:** This application is deployed on **Render** (not Vercel) using a Docker-based continuous deployment pipeline hooked directly into the GitHub repository.
+> **Deployment Platform:** This application is deployed on **Render** using a Docker-based continuous deployment pipeline hooked directly into the GitHub repository.
 
 ## 🛠️ Modern Tech Stack
 - **Frontend Framework**: React 18 + Vite
