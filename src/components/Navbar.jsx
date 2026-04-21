@@ -1,34 +1,40 @@
-function Navbar({ isUnstable, onToggle }) {
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Menu } from 'lucide-react'
+import { soundEngine } from '../utils/soundEngine'
+
+const Navbar = ({ scrolled, onMobileToggle }) => {
+  const handleClick = () => {
+    soundEngine.playClick()
+  }
+
   return (
-    <nav>
-      <div className="logo">
-        <h1>Bipolar <span>{isUnstable ? 'Chaos' : 'Logic'}</span></h1>
-      </div>
-      <div className="nav-links" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-        <a href="#hero" style={{ textDecoration: 'none', color: 'inherit', fontSize: '0.85rem', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px' }}>Home</a>
-        <a href="#playground" style={{ textDecoration: 'none', color: 'inherit', fontSize: '0.85rem', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px' }}>Lab</a>
-        <div 
-          onClick={onToggle}
-          className="mode-switch"
-          style={{ 
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.5rem',
-            padding: '0.4rem 0.8rem', 
-            borderRadius: '100px',
-            cursor: 'pointer',
-            background: isUnstable ? 'var(--primary)' : 'var(--surface-secondary)',
-            border: '1px solid var(--border)',
-            fontSize: '0.75rem',
-            fontWeight: 'bold',
-            color: isUnstable ? '#000' : 'var(--text)'
-          }}
-        >
-          <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: isUnstable ? '#000' : 'var(--primary)', boxShadow: isUnstable ? 'none' : '0 0 10px var(--primary)' }}></span>
-          {isUnstable ? 'UNSTABLE' : 'STABLE'}
+    <motion.nav 
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`navbar ${scrolled ? 'scrolled' : ''}`}
+    >
+      <div className="container nav-inner">
+        <a href="#" className="nav-logo" onClick={handleClick}>
+          <div className="logo-icon">B</div>
+          <span>Bipolar Factory</span>
+        </a>
+        
+        <div className="nav-links desktop-only">
+          <a href="#about" onClick={handleClick}>ABOUT</a>
+          <a href="#services" onClick={handleClick}>SERVICES</a>
+          <a href="#projects" onClick={handleClick}>PROJECTS</a>
+          <a href="#case-studies" onClick={handleClick}>CASES</a>
+        </div>
+
+        <div className="nav-actions">
+          <a href="#contact" className="nav-cta desktop-only" onClick={handleClick}>START A PROJECT</a>
+          <button className="mobile-toggle" onClick={() => { handleClick(); onMobileToggle(); }}>
+            <Menu size={24} />
+          </button>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   )
 }
 
