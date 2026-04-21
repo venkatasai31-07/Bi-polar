@@ -1,25 +1,45 @@
 # Bi-Polar Factory // AI Engineer Assignment
 
-This website was built as part of the AI Engineer application for Bi-Polar Factory. The goal was to create a "fresh, bold, and fun" experience that reflects how I perceive the company—as a scrappy, unique, and high-impact technology lab.
+Welcome to the official redesign and structural replica of the Bi-Polar Factory website, built for the AI Engineer role assignment. 
 
-## 🚀 Live Link
-[Deploy to Vercel/Render for Live Link]
+This project transitions the brand from a traditional footprint into a high-fidelity, **Dimension-inspired SaaS aesthetic**, emphasizing "The standard for high-performance agentic collaboration."
 
-## 🛠️ Tech Stack
-- **Framework**: React 19 + Vite 5
-- **Animations**: Framer Motion (for smooth, interactive flows)
+## 🌐 Live Deployment
+**Live Link:** [https://bi-polar-lkaa.onrender.com](https://bi-polar-lkaa.onrender.com)
+
+> [!IMPORTANT]  
+> **Deployment Platform:** This application is deployed on **Render** (not Vercel) using a Docker-based continuous deployment pipeline hooked directly into the GitHub repository.
+
+## 🛠️ Modern Tech Stack
+- **Frontend Framework**: React 18 + Vite
+- **Routing**: React Router Dom (Architecture mirrors the official 5-page structure)
+- **Animations**: Framer Motion (Physics-based scroll and entry animations)
 - **Icons**: Lucide React
-- **Design**: Vanilla CSS (High-contrast Red/Black/Glass system)
-- **Typography**: Syne (Headings) & Inter (Body)
+- **Styling**: Vanilla CSS with a Custom Glassmorphism Design System
+- **Deployment**: Render (Dockerized)
 
-## 🧠 Design Philosophy
-- **Bold Aesthetics**: Using Bi-Polar's signature Red on a Deep Black background to create a premium, high-tech vibe.
-- **Micro-interactions**: Every section has a "vibe"—from the magnetic navigation to the scrolling marquee and code-inspired visual blocks.
-- **Scrappy Execution**: Built with a focus on impact and personality. We build what others overthink.
+## 🧠 What was Built
+I perceived Bi-Polar Factory not just as a service provider, but as a "Technical laboratory." 
 
-## 🏃 How to Run Locally
-1. `npm install`
-2. `npm run dev`
+1. **Multi-Page Architecture**: Expanded the initial landing page into a fully routed application featuring:
+   - **Home**: Hero section with a high-fidelity "OLY DASH" analytics preview.
+   - **Products**: Detailed breakdown of signature products like *OLY Store Sync* and *Metawood*.
+   - **Partners**: Exploration of the TPaaS (Technology Partner as a Service) methodology.
+   - **Case Studies**: Showcasing major real-world impacts for the *Election Commission of India*, *Landmark Group*, and *Zigma*.
+   - **Contact**: A modern outreach portal.
+2. **Dimension UI**: Implemented a deep dark-purple aesthetic with neon pink gradients, frosted glass layers (`backdrop-filter`), and a centered floating navigation system.
+3. **Optimized Performance**: Built from scratch with a focus on speed, responsiveness, and polished interactive states.
+
+## 🏃 Local Setup
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
 ---
-*Built with ❤️ for Bi-Polar Factory.*
+*Built within 24 hours as a bold vision for the future of Bi-Polar Factory.*
