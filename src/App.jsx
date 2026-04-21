@@ -1,14 +1,19 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Routes, Route, Link } from 'react-router-dom'
 import { X } from 'lucide-react'
 
 // Modular Components
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
+import Home from './pages/Home'
+import Products from './pages/Products'
+import Partnership from './pages/Partnership'
+import About from './pages/About'
+import CaseStudies from './pages/CaseStudies'
+import Contact from './pages/Contact'
 import { LinkedinIcon, TwitterIcon, GithubIcon } from './components/SocialIcons'
 
 // Data & Utils
-import { services } from './data/siteData'
 import { soundEngine } from './utils/soundEngine'
 import './index.css'
 
@@ -46,51 +51,35 @@ function App() {
               <X size={32} />
             </button>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', marginTop: '60px' }}>
-              <a href="#products" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700 }}>Products</a>
-              <a href="#partnership" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700 }}>Technology Partnership</a>
-              <a href="#about" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700 }}>About</a>
-              <a href="#careers" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700 }}>Careers</a>
-              <a href="#case-studies" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700 }}>Case Studies</a>
-              <a href="#contact" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700 }}>Contact Us</a>
+              <Link to="/products" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700, color: 'white', textDecoration: 'none' }}>Products</Link>
+              <Link to="/partnership" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700, color: 'white', textDecoration: 'none' }}>Technology Partnership</Link>
+              <Link to="/about" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700, color: 'white', textDecoration: 'none' }}>About</Link>
+              <a href="https://bipolarfactory.zohorecruit.in/jobs/Careers" target="_blank" rel="noreferrer" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700, color: 'white', textDecoration: 'none' }}>Careers</a>
+              <Link to="/case-studies" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700, color: 'white', textDecoration: 'none' }}>Case Studies</Link>
+              <Link to="/contact" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700, color: 'white', textDecoration: 'none' }}>Contact Us</Link>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <main>
-        <Hero />
-
-        {/* Features Section */}
-        <section className="features-section" id="services">
-          <div className="container" style={{ position: 'relative', zIndex: 10 }}>
-            <div className="section-header">
-              <h2>Powerful Features</h2>
-            </div>
-            
-            <div className="features-grid">
-              {services.map((service, i) => (
-                <div key={i} className="feature-card">
-                  <div className="feature-icon">
-                    {service.icon}
-                  </div>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/partnership" element={<Partnership />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/case-studies" element={<CaseStudies />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
 
       {/* Footer */}
       <footer className="footer-v2">
         <div className="container">
           <div className="footer-top">
             <div style={{ maxWidth: '300px' }}>
-              <div className="nav-logo" style={{ marginBottom: '16px' }}>
+              <Link to="/" className="nav-logo" style={{ marginBottom: '16px', display: 'flex', textDecoration: 'none' }} onClick={handleSoundClick}>
                 <div className="logo-icon">B</div>
-                <span>Bi-Polar Factory</span>
-              </div>
+                <span style={{ color: 'white' }}>Bi-Polar Factory</span>
+              </Link>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.6' }}>
                 The new standard for high-performance agentic collaboration and software development.
               </p>
@@ -98,15 +87,15 @@ function App() {
             <div style={{ display: 'flex', gap: '60px' }}>
               <div className="footer-col">
                 <h4>LAB</h4>
-                <a href="#products" onClick={handleSoundClick}>Products</a>
-                <a href="#partnership" onClick={handleSoundClick}>Technology Partnership</a>
+                <Link to="/products" onClick={handleSoundClick}>Products</Link>
+                <Link to="/partnership" onClick={handleSoundClick}>Technology Partnership</Link>
               </div>
               <div className="footer-col">
                 <h4>COMPANY</h4>
-                <a href="#about" onClick={handleSoundClick}>About</a>
-                <a href="#careers" onClick={handleSoundClick}>Careers</a>
-                <a href="#case-studies" onClick={handleSoundClick}>Case Studies</a>
-                <a href="#contact" onClick={handleSoundClick}>Contact Us</a>
+                <Link to="/about" onClick={handleSoundClick}>About</Link>
+                <a href="https://bipolarfactory.zohorecruit.in/jobs/Careers" onClick={handleSoundClick} target="_blank" rel="noreferrer">Careers</a>
+                <Link to="/case-studies" onClick={handleSoundClick}>Case Studies</Link>
+                <Link to="/contact" onClick={handleSoundClick}>Contact Us</Link>
               </div>
             </div>
           </div>

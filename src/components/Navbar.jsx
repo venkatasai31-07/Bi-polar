@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Menu } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { soundEngine } from '../utils/soundEngine'
 
 const Navbar = ({ onMobileToggle }) => {
@@ -15,22 +16,22 @@ const Navbar = ({ onMobileToggle }) => {
       className="navbar"
     >
       <div className="nav-inner">
-        <a href="#" className="nav-logo" onClick={handleClick}>
+        <Link to="/" className="nav-logo" onClick={handleClick}>
           <div className="logo-icon">B</div>
           <span className="desktop-only">Bi-Polar Factory</span>
-        </a>
+        </Link>
         
         <div className="nav-links desktop-only">
-          <a href="#products" onClick={handleClick}>Products</a>
-          <a href="#partnership" onClick={handleClick}>Technology Partnership</a>
-          <a href="#about" onClick={handleClick}>About</a>
-          <a href="#careers" onClick={handleClick}>Careers</a>
-          <a href="#case-studies" onClick={handleClick}>Case Studies</a>
-          <a href="#contact" onClick={handleClick}>Contact Us</a>
+          <Link to="/products" onClick={handleClick}>Products</Link>
+          <Link to="/partnership" onClick={handleClick}>Technology Partnership</Link>
+          <Link to="/about" onClick={handleClick}>About</Link>
+          <a href="https://bipolarfactory.zohorecruit.in/jobs/Careers" onClick={handleClick} target="_blank" rel="noreferrer">Careers</a>
+          <Link to="/case-studies" onClick={handleClick}>Case Studies</Link>
+          <Link to="/contact" onClick={handleClick}>Contact Us</Link>
         </div>
 
         <div className="nav-actions">
-          <a href="#contact" className="nav-cta desktop-only" onClick={handleClick}>Join waitlist</a>
+          <Link to="/contact" className="nav-cta desktop-only" onClick={handleClick}>Join waitlist</Link>
           <button className="mobile-toggle" onClick={() => { handleClick(); onMobileToggle(); }}>
             <Menu size={20} />
           </button>
