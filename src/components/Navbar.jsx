@@ -23,11 +23,10 @@ const Navbar = ({ onMobileToggle }) => {
         
         <div className="nav-links desktop-only">
           <Link to="/products" onClick={handleClick}>Products</Link>
-          <Link to="/partnership" onClick={handleClick}>Technology Partnership</Link>
+          <Link to="/partnership" onClick={handleClick}>Partners</Link>
           <Link to="/about" onClick={handleClick}>About</Link>
-          <a href="https://bipolarfactory.zohorecruit.in/jobs/Careers" onClick={handleClick} target="_blank" rel="noreferrer">Careers</a>
-          <Link to="/case-studies" onClick={handleClick}>Case Studies</Link>
-          <Link to="/contact" onClick={handleClick}>Contact Us</Link>
+          <Link to="/case-studies" onClick={handleClick}>Cases</Link>
+          <Link to="/contact" onClick={handleClick}>Contact</Link>
         </div>
 
         <div className="nav-actions">

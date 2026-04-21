@@ -52,11 +52,10 @@ function App() {
             </button>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', marginTop: '60px' }}>
               <Link to="/products" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700, color: 'white', textDecoration: 'none' }}>Products</Link>
-              <Link to="/partnership" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700, color: 'white', textDecoration: 'none' }}>Technology Partnership</Link>
+              <Link to="/partnership" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700, color: 'white', textDecoration: 'none' }}>Partners</Link>
               <Link to="/about" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700, color: 'white', textDecoration: 'none' }}>About</Link>
-              <a href="https://bipolarfactory.zohorecruit.in/jobs/Careers" target="_blank" rel="noreferrer" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700, color: 'white', textDecoration: 'none' }}>Careers</a>
-              <Link to="/case-studies" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700, color: 'white', textDecoration: 'none' }}>Case Studies</Link>
-              <Link to="/contact" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700, color: 'white', textDecoration: 'none' }}>Contact Us</Link>
+              <Link to="/case-studies" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700, color: 'white', textDecoration: 'none' }}>Cases</Link>
+              <Link to="/contact" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700, color: 'white', textDecoration: 'none' }}>Contact</Link>
             </div>
           </motion.div>
         )}
@@ -88,14 +87,13 @@ function App() {
               <div className="footer-col">
                 <h4>LAB</h4>
                 <Link to="/products" onClick={handleSoundClick}>Products</Link>
-                <Link to="/partnership" onClick={handleSoundClick}>Technology Partnership</Link>
+                <Link to="/partnership" onClick={handleSoundClick}>Partners</Link>
               </div>
               <div className="footer-col">
                 <h4>COMPANY</h4>
                 <Link to="/about" onClick={handleSoundClick}>About</Link>
-                <a href="https://bipolarfactory.zohorecruit.in/jobs/Careers" onClick={handleSoundClick} target="_blank" rel="noreferrer">Careers</a>
-                <Link to="/case-studies" onClick={handleSoundClick}>Case Studies</Link>
-                <Link to="/contact" onClick={handleSoundClick}>Contact Us</Link>
+                <Link to="/case-studies" onClick={handleSoundClick}>Cases</Link>
+                <Link to="/contact" onClick={handleSoundClick}>Contact</Link>
               </div>
             </div>
           </div>
