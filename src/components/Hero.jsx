@@ -54,7 +54,7 @@ const Hero = () => {
           </motion.div>
 
           <motion.h1 variants={fadeInUp}>
-            WE BUILD THE <span className="text-red">IMPOSSIBLE</span> <br />
+            WE BUILD THE <span className="text-green">IMPOSSIBLE</span> <br />
             WHILE OTHERS <span className="text-outline">OVERTHINK.</span>
           </motion.h1>
 

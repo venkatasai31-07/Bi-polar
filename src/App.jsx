@@ -82,18 +82,18 @@ function App() {
               className="about-text"
             >
               <div className="section-label">OUR MANIFESTO</div>
-              <h2>WE DON'T JUST <span className="text-red">CODE.</span> WE CREATE <span className="text-red">MOMENTUM.</span></h2>
+              <h2>WE DON'T JUST <span className="text-green">CODE.</span> WE CREATE <span className="text-green">MOMENTUM.</span></h2>
               <div className="points-list">
                 <div className="point">
-                  <CheckCircle2 size={20} className="text-red" />
+                  <CheckCircle2 size={20} className="text-green" />
                   <span>Problem First, Code Second</span>
                 </div>
                 <div className="point">
-                  <CheckCircle2 size={20} className="text-red" />
+                  <CheckCircle2 size={20} className="text-green" />
                   <span>Radical Transparency in Build</span>
                 </div>
                 <div className="point">
-                  <CheckCircle2 size={20} className="text-red" />
+                  <CheckCircle2 size={20} className="text-green" />
                   <span>Speed is a Feature</span>
                 </div>
               </div>
@@ -139,7 +139,7 @@ function App() {
         <div className="container">
           <div className="section-header">
             <div className="section-label">WHAT WE DO</div>
-            <h2>ENGINEERING <span className="text-red">EDGE</span></h2>
+            <h2>ENGINEERING <span className="text-green">EDGE</span></h2>
           </div>
 
           <div className="services-grid">
@@ -160,7 +160,7 @@ function App() {
       <section className="cta-section" id="contact">
         <div className="container">
           <motion.div className="cta-box-v2">
-            <h2>READY TO <span className="text-red">VIBECODE?</span></h2>
+            <h2>READY TO <span className="text-green">VIBECODE?</span></h2>
             <div className="cta-btns">
               <a href="mailto:hello@bipolarfactory.com" className="btn-primary-big" onClick={handleSoundClick}>
                 SEND ENQUIRY

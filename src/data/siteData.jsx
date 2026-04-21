@@ -2,22 +2,22 @@ import { Zap, Globe, Code2, Users } from 'lucide-react'
 
 export const services = [
   {
-    icon: <Zap size={32} className="text-red" />,
+    icon: <Zap size={32} className="text-green" />,
     title: 'AGENTIC AI SYSTEMS',
     description: 'We build autonomous AI agents that don\'t just chat, but execute complex multi-step workflows for your business.'
   },
   {
-    icon: <Globe size={32} className="text-red" />,
+    icon: <Globe size={32} className="text-green" />,
     title: 'DIGITAL TRANSFORMATION',
     description: 'Modernizing legacy architectures into scalable, cloud-native ecosystems built for the next decade.'
   },
   {
-    icon: <Code2 size={32} className="text-red" />,
+    icon: <Code2 size={32} className="text-green" />,
     title: 'CUSTOM PRODUCT LAB',
     description: 'From zero-to-one product development with a focus on speed-to-market and high-fidelity user experiences.'
   },
   {
-    icon: <Users size={32} className="text-red" />,
+    icon: <Users size={32} className="text-green" />,
     title: 'TECH PARTNERSHIP',
     description: 'Acting as your fractional CTO and engineering team, we align our success strictly with your growth.'
   }
