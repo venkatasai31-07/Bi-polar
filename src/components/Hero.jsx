@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { Zap, ArrowRight } from 'lucide-react'
-import { soundEngine } from '../utils/soundEngine'
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Sparkles, ArrowRight } from 'lucide-react'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -18,72 +17,70 @@ const staggerContainer = {
 }
 
 const Hero = () => {
-  const { scrollY } = useScroll()
-  const y1 = useTransform(scrollY, [0, 500], [0, 200])
-  const opacity = useTransform(scrollY, [0, 300], [1, 0])
-
-  useEffect(() => {
-    // Play transition sound on mount (Vibe)
-    soundEngine.playTransition()
-  }, [])
-
-  const handleInteraction = () => {
-    soundEngine.playClick()
-  }
-
   return (
     <section className="hero" id="hero">
-      <motion.div 
-        style={{ y: y1, opacity }}
-        className="hero-background"
-      >
-        <div className="hero-glow-main"></div>
-        <div className="hero-grid"></div>
-      </motion.div>
-
-      <div className="container">
+      <div className="glow-orb-top"></div>
+      
+      <div className="container" style={{ position: 'relative', zIndex: 10, width: '100%' }}>
         <motion.div 
           initial="initial"
           animate="animate"
           variants={staggerContainer}
-          className="hero-content"
+          style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
         >
           <motion.div variants={fadeInUp} className="hero-badge">
-            <Zap size={14} fill="currentColor" />
-            <span>AGENTIC AI & PRODUCT LAB</span>
+            <Sparkles size={14} />
+            <span>Announcing our Private Beta</span>
           </motion.div>
 
           <motion.h1 variants={fadeInUp}>
-            WE BUILD THE <span className="text-green">IMPOSSIBLE</span> <br />
-            WHILE OTHERS <span className="text-outline">OVERTHINK.</span>
+            Bi-Polar Factory is the new <br />
+            standard for <span className="text-gradient">collaboration</span>
           </motion.h1>
 
           <motion.p variants={fadeInUp} className="hero-description">
-            A collective of scrappy engineers, designers, and visionaries 
-            building high-impact technology solutions that actually move the needle.
+            Chat, code, cloud, deployments, and more. All seamlessly integrated into a single high-performance agentic laboratory.
           </motion.p>
 
-          <motion.div variants={fadeInUp} className="hero-buttons">
-            <a href="#projects" className="btn-primary" onClick={handleInteraction}>
-              EXPLORE OUR LAB <ArrowRight size={18} />
-            </a>
-            <a href="#about" className="btn-secondary" onClick={handleInteraction}>
-              OUR MANIFESTO
-            </a>
+          <motion.form variants={fadeInUp} className="hero-cta-form" onSubmit={(e) => e.preventDefault()}>
+            <input type="email" placeholder="Email address" required />
+            <button type="submit" className="btn-gradient">
+              Join waitlist
+            </button>
+          </motion.form>
+
+          {/* High Fidelity App Mockup Window */}
+          <motion.div 
+            variants={fadeInUp}
+            className="app-preview-wrapper"
+          >
+            <div className="app-preview">
+              <div className="app-header">
+                <div className="app-dot"></div>
+                <div className="app-dot"></div>
+                <div className="app-dot"></div>
+              </div>
+              <div className="app-body">
+                <div className="app-sidebar desktop-only">
+                  <div className="app-sidebar-item short"></div>
+                  <div className="app-sidebar-item"></div>
+                  <div className="app-sidebar-item active"></div>
+                  <div className="app-sidebar-item short"></div>
+                  <div className="app-sidebar-item"></div>
+                </div>
+                <div className="app-main">
+                  <div className="app-hero-element"></div>
+                  <div style={{ display: 'flex', gap: '24px' }}>
+                    <div className="app-hero-card"></div>
+                    <div className="app-hero-card"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
+
         </motion.div>
       </div>
-
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="scroll-indicator"
-      >
-        <div className="mouse">
-          <div className="wheel"></div>
-        </div>
-      </motion.div>
     </section>
   )
 }

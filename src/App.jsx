@@ -1,35 +1,23 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { 
-  CheckCircle2, 
-  Mail,
-  X,
-  ArrowRight
-} from 'lucide-react'
+import { X } from 'lucide-react'
 
 // Modular Components
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import GlassCard from './components/GlassCard'
 import { LinkedinIcon, TwitterIcon, GithubIcon } from './components/SocialIcons'
 
 // Data & Utils
-import { services, caseStudies } from './data/siteData'
+import { services } from './data/siteData'
 import { soundEngine } from './utils/soundEngine'
 import './index.css'
 
 function App() {
-  const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', handleScroll)
-    
-    // Play a subtle background hum when the lab "powers on"
-    // soundEngine.startStableHum(); // Optional: User can toggle
-
-    return () => window.removeEventListener('scroll', handleScroll)
+    // Subtle background sound
+    // soundEngine.startStableHum(); 
   }, [])
 
   const handleSoundClick = () => {
@@ -39,164 +27,89 @@ function App() {
   return (
     <div className="app">
       {/* Background Effects */}
-      <div className="bg-effects">
-        <div className="orb orb-1"></div>
-        <div className="orb orb-2"></div>
-        <div className="grid-overlay"></div>
-      </div>
+      <div className="bg-effects"></div>
+      <div className="grid-overlay"></div>
 
-      <Navbar scrolled={scrolled} onMobileToggle={() => setMobileMenuOpen(true)} />
+      <Navbar onMobileToggle={() => setMobileMenuOpen(true)} />
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div 
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             className="mobile-menu-overlay"
+            style={{ background: 'var(--bg-primary)', position: 'fixed', inset: 0, zIndex: 2000, padding: '40px' }}
           >
-            <button className="close-btn" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }}>
+            <button style={{ background: 'none', border: 'none', color: 'white', position: 'absolute', top: '32px', right: '32px' }} onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }}>
               <X size={32} />
             </button>
-            <div className="mobile-links">
-              <a href="#about" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }}>ABOUT</a>
-              <a href="#services" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }}>SERVICES</a>
-              <a href="#projects" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }}>PROJECTS</a>
-              <a href="#contact" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }}>CONTACT</a>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', marginTop: '60px' }}>
+              <a href="#about" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700 }}>About</a>
+              <a href="#services" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700 }}>Services</a>
+              <a href="#projects" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700 }}>Changelog</a>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <Hero />
+      <main>
+        <Hero />
 
-      {/* About Section */}
-      <section className="about-section" id="about">
-        <div className="container">
-          <div className="about-grid">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="about-text"
-            >
-              <div className="section-label">OUR MANIFESTO</div>
-              <h2>WE DON'T JUST <span className="text-green">CODE.</span> WE CREATE <span className="text-green">MOMENTUM.</span></h2>
-              <div className="points-list">
-                <div className="point">
-                  <CheckCircle2 size={20} className="text-green" />
-                  <span>Problem First, Code Second</span>
-                </div>
-                <div className="point">
-                  <CheckCircle2 size={20} className="text-green" />
-                  <span>Radical Transparency in Build</span>
-                </div>
-                <div className="point">
-                  <CheckCircle2 size={20} className="text-green" />
-                  <span>Speed is a Feature</span>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="about-visual"
-            >
-              <div className="code-card">
-                <div className="code-header">
-                  <div className="dot red"></div>
-                  <div className="dot yellow"></div>
-                  <div className="dot green"></div>
-                </div>
-                <div className="code-body">
-                  <pre>
-                    <code>
-{`class BipolarFactory {
-  constructor() {
-    this.focus = "Human Centric AI";
-    this.style = "Scrappy & Bold";
-  }
-
-  async solve(problem) {
-    const solution = await think(problem);
-    return execute(solution);
-  }
-}`}
-                    </code>
-                  </pre>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="services-section" id="services">
-        <div className="container">
-          <div className="section-header">
-            <div className="section-label">WHAT WE DO</div>
-            <h2>ENGINEERING <span className="text-green">EDGE</span></h2>
-          </div>
-
-          <div className="services-grid">
-            {services.map((service, i) => (
-              <GlassCard key={i} className="service-card">
-                <div className="service-icon-box">
-                  {service.icon}
-                </div>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-              </GlassCard>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="cta-section" id="contact">
-        <div className="container">
-          <motion.div className="cta-box-v2">
-            <h2>READY TO <span className="text-green">VIBECODE?</span></h2>
-            <div className="cta-btns">
-              <a href="mailto:hello@bipolarfactory.com" className="btn-primary-big" onClick={handleSoundClick}>
-                SEND ENQUIRY
-              </a>
+        {/* Features Section */}
+        <section className="features-section" id="services">
+          <div className="container" style={{ position: 'relative', zIndex: 10 }}>
+            <div className="section-header">
+              <h2>Powerful Features</h2>
             </div>
-          </motion.div>
-        </div>
-      </section>
+            
+            <div className="features-grid">
+              {services.map((service, i) => (
+                <div key={i} className="feature-card">
+                  <div className="feature-icon">
+                    {service.icon}
+                  </div>
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
 
       {/* Footer */}
       <footer className="footer-v2">
         <div className="container">
           <div className="footer-top">
-            <div className="footer-brand">
-              <div className="nav-logo">
+            <div style={{ maxWidth: '300px' }}>
+              <div className="nav-logo" style={{ marginBottom: '16px' }}>
                 <div className="logo-icon">B</div>
-                <span>Bipolar Factory</span>
+                <span>Bi-Polar Factory</span>
               </div>
-              <p>Harnessing technology for the betterment of society.</p>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.6' }}>
+                The new standard for high-performance agentic collaboration and software development.
+              </p>
             </div>
-            <div className="footer-links-grid">
+            <div style={{ display: 'flex', gap: '60px' }}>
               <div className="footer-col">
-                <h4>LAB</h4>
-                <a href="#" onClick={handleSoundClick}>Products</a>
-                <a href="#" onClick={handleSoundClick}>AI Research</a>
+                <h4>PRODUCT</h4>
+                <a href="#" onClick={handleSoundClick}>Features</a>
+                <a href="#" onClick={handleSoundClick}>Integrations</a>
+                <a href="#" onClick={handleSoundClick}>Changelog</a>
               </div>
               <div className="footer-col">
                 <h4>COMPANY</h4>
+                <a href="#" onClick={handleSoundClick}>About Us</a>
                 <a href="#" onClick={handleSoundClick}>Careers</a>
                 <a href="#" onClick={handleSoundClick}>Contact</a>
               </div>
             </div>
           </div>
           <div className="footer-bottom-v2">
-            <p>© 2026 BIPOLAR FACTORY. BUILT WITH VIBE.</p>
-            <div className="social-links">
+            <p>© 2026 Bi-Polar Factory. All rights reserved.</p>
+            <div style={{ display: 'flex', gap: '16px' }}>
               <a href="#" onClick={handleSoundClick}><LinkedinIcon /></a>
               <a href="#" onClick={handleSoundClick}><TwitterIcon /></a>
               <a href="#" onClick={handleSoundClick}><GithubIcon /></a>
