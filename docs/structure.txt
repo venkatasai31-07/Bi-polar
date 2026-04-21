@@ -1,0 +1,9 @@
+1. Hero Section
+2. AI Playground
+3. Pipeline Console
+4. Experiment Lab
+5. Capabilities
+6. Case Study
+7. How It Works
+8. About
+9. Contact

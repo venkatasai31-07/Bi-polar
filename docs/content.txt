@@ -1,0 +1,83 @@
+🏠 Hero Section
+Heading:
+We Build AI Systems That Think Beyond Stability
+
+Subtext:
+Explore structured intelligence and experimental AI behavior.
+
+Button:
+Enter AI Lab
+Toggle: Stable | Unstable
+
+🧠 AI Playground
+Title:
+AI Playground
+
+Input Placeholder:
+Describe your AI problem...
+
+Button:
+Run AI
+
+Output:
+- Model Suggestion
+- Deployment Type
+- Accuracy
+
+💻 Pipeline Console
+Title:
+AI Pipeline Console
+
+Buttons:
+- Train Model
+- Optimize Model
+- Deploy Model
+
+Logs:
+- Loading dataset
+- Training model
+- Accuracy achieved
+- Applying quantization
+- Deployment success
+
+🧪 Experiment Lab
+Title:
+Experiment Lab
+
+Buttons:
+- Run Model
+- Stress Test
+- Optimize System
+
+Output:
+- Logs
+- Metrics
+
+⚙️ Capabilities
+- Computer Vision
+- LLM Systems
+- Edge AI Deployment
+- Inference Optimization
+
+📊 Case Study
+Title:
+Smart Surveillance AI
+
+Details:
+Input: CCTV feed
+Model: Object detection
+Output: Real-time alerts
+
+🔍 How It Works
+1. Data Collection
+2. Model Training
+3. Optimization (Quantization)
+4. Deployment (Edge/Cloud)
+5. Monitoring
+
+👤 About
+We build adaptive AI systems that evolve beyond predictable behavior.
+
+📩 Contact
+Call to Action:
+Let’s build intelligent systems together.

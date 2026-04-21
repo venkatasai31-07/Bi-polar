@@ -1,0 +1,11 @@
+🎯 Define behavior
+1. Dual Mode Toggle
+Switch between:
+- Stable Mode (light theme)
+- Unstable Mode (dark/glitch theme)
+2. AI Playground
+User types input → system returns predefined AI response
+3. Pipeline Console
+Button click → show logs step by step
+4. Experiment Lab
+Button click → simulate system actions

@@ -1,0 +1,14 @@
+Project Name: Bipolar AI Lab
+
+Concept:
+An interactive AI system interface that represents dual behavior of intelligence:
+1. Stable Mode – structured, logical, predictable
+2. Unstable Mode – experimental, adaptive, chaotic
+
+Goal:
+To simulate how AI systems are designed, trained, optimized, and deployed.
+
+Focus:
+- AI system thinking
+- Interaction over static content
+- Simulation of real-world AI workflows
