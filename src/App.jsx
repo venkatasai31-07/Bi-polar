@@ -46,9 +46,12 @@ function App() {
               <X size={32} />
             </button>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', marginTop: '60px' }}>
+              <a href="#products" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700 }}>Products</a>
+              <a href="#partnership" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700 }}>Technology Partnership</a>
               <a href="#about" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700 }}>About</a>
-              <a href="#services" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700 }}>Services</a>
-              <a href="#projects" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700 }}>Changelog</a>
+              <a href="#careers" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700 }}>Careers</a>
+              <a href="#case-studies" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700 }}>Case Studies</a>
+              <a href="#contact" onClick={() => { handleSoundClick(); setMobileMenuOpen(false); }} style={{ fontSize: '2rem', fontWeight: 700 }}>Contact Us</a>
             </div>
           </motion.div>
         )}
@@ -94,16 +97,16 @@ function App() {
             </div>
             <div style={{ display: 'flex', gap: '60px' }}>
               <div className="footer-col">
-                <h4>PRODUCT</h4>
-                <a href="#" onClick={handleSoundClick}>Features</a>
-                <a href="#" onClick={handleSoundClick}>Integrations</a>
-                <a href="#" onClick={handleSoundClick}>Changelog</a>
+                <h4>LAB</h4>
+                <a href="#products" onClick={handleSoundClick}>Products</a>
+                <a href="#partnership" onClick={handleSoundClick}>Technology Partnership</a>
               </div>
               <div className="footer-col">
                 <h4>COMPANY</h4>
-                <a href="#" onClick={handleSoundClick}>About Us</a>
-                <a href="#" onClick={handleSoundClick}>Careers</a>
-                <a href="#" onClick={handleSoundClick}>Contact</a>
+                <a href="#about" onClick={handleSoundClick}>About</a>
+                <a href="#careers" onClick={handleSoundClick}>Careers</a>
+                <a href="#case-studies" onClick={handleSoundClick}>Case Studies</a>
+                <a href="#contact" onClick={handleSoundClick}>Contact Us</a>
               </div>
             </div>
           </div>

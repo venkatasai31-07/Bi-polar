@@ -21,9 +21,12 @@ const Navbar = ({ onMobileToggle }) => {
         </a>
         
         <div className="nav-links desktop-only">
+          <a href="#products" onClick={handleClick}>Products</a>
+          <a href="#partnership" onClick={handleClick}>Technology Partnership</a>
           <a href="#about" onClick={handleClick}>About</a>
-          <a href="#services" onClick={handleClick}>Services</a>
-          <a href="#projects" onClick={handleClick}>Changelog</a>
+          <a href="#careers" onClick={handleClick}>Careers</a>
+          <a href="#case-studies" onClick={handleClick}>Case Studies</a>
+          <a href="#contact" onClick={handleClick}>Contact Us</a>
         </div>
 
         <div className="nav-actions">
